@@ -1,0 +1,30 @@
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+let i = 10;
+while (i > 0) {
+    console.log(i);
+    i--;
+}
+
+let number;
+do {
+    number = parseInt(prompt("Enter a number (0 to stop):"), 10);
+    console.log("You entered:", number);
+} while (number !== 0);
+
+for (let i = 0; i < 5; i++) {
+    let line = '';
+    for (let j = 0; j < 5; j++) {
+        line += '* ';
+    }
+    console.log(line);
+}
+
+for (let i = 1; i <= 100; i++) {
+    if (i % 10 === 0) {
+        console.log("Breaking at:", i);
+        break;
+    }
+    console.log(i);
+}
