@@ -1,0 +1,44 @@
+// Import the area function from rectangle.js
+import { area } from './rectangle.js';
+
+// Use the area function
+const width = 5;
+const height = 10;
+const calculatedArea = area(width, height);
+console.log('Area:', calculatedArea);
+
+// main.js
+import User from '/User.js';
+// Create a new instance of the User class
+const user = new User('John', 30);
+// Call the greet method
+console.log(user.greet()); // Output: Hello, my name is John and I am 30 years old.
+
+import { add as addition, subtract as subtraction } from './utilities.js';
+console.log("Addition result:", addition(10, 5)); // Outputs: Addition result: 15
+console.log("Subtraction result:", subtraction(10, 5)); // Outputs: Subtraction result: 5
+
+
+///FIles
+// Define and export the area function
+export function area(width, height) {
+    return width * height;
+   }
+
+
+export function add(x, y) {
+ return x + y;
+}
+export function subtract(x, y) {
+ return x - y;
+}
+
+export default class User {
+ constructor(name, age) {
+ this.name = name;
+ this.age = age;
+ }
+ greet() {
+ return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+ }
+}
