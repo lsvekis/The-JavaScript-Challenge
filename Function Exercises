@@ -1,0 +1,28 @@
+function greet() {
+    console.log("Hello, World!");
+   }
+   greet(); // Function invocation
+   
+   function add(a, b) {
+    return a + b;
+   }
+   console.log(add(5, 3)); // Outputs 8
+   
+   function multiply(a = 1, b = 1) {
+    return a * b;
+   }
+   console.log(multiply(4)); // Outputs 4
+   console.log(multiply(4, 5)); // Outputs 20
+   
+   function showNumber() {
+    let num = 10; // Local variable
+    console.log(num); // Accessible here
+   }
+   showNumber();
+   console.log(num); // Error: num is not defined
+   
+   const square = function(num) {
+    return num * num;
+   };
+   console.log(square(4)); // Outputs 16
+   
