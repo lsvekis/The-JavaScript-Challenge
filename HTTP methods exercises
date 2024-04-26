@@ -1,0 +1,54 @@
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+ .then(response => response.json())
+ .then(data => console.log(data))
+ .catch(error => console.error('Failed to fetch:', error));
+
+ fetch('https://jsonplaceholder.typicode.com/posts', {
+ method: 'POST',
+ headers: {
+ 'Content-Type': 'application/json'
+ },
+ body: JSON.stringify({
+ title: 'foo',
+ body: 'bar',
+ userId: 1
+ })
+})
+.then(response => response.json())
+.then(data => console.log('Created:', data))
+.catch(error => console.error('Error posting data:', error));
+
+fetch('https://jsonplaceholder.typicode.com/posts/1', {
+ method: 'PUT',
+ headers: {
+ 'Content-Type': 'application/json'
+ },
+ body: JSON.stringify({
+ id: 1,
+ title: 'Updated Title',
+ body: 'Updated body',
+ userId: 1
+ })
+})
+.then(response => response.json())
+.then(data => console.log('Updated:', data))
+.catch(error => console.error('Error updating data:', error));
+
+fetch('https://jsonplaceholder.typicode.com/posts/1', {
+ method: 'PATCH',
+ headers: {
+ 'Content-Type': 'application/json'
+ },
+ body: JSON.stringify({
+ title: 'Patched Title'
+ })
+})
+.then(response => response.json())
+.then(data => console.log('Patched:', data))
+.catch(error => console.error('Error patching data:', error));
+
+fetch('https://jsonplaceholder.typicode.com/posts/1', {
+ method: 'DELETE'
+})
+.then(() => console.log('Deleted successfully'))
+.catch(error => console.error('Error deleting data:', error));
