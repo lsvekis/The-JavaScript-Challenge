@@ -1,0 +1,63 @@
+function parseJSON(jsonString) {
+    try {
+    let jsonObj = JSON.parse(jsonString);
+    console.log("JSON parsed successfully:", jsonObj);
+    } catch (error) {
+    console.error("Failed to parse JSON:", error);
+    }
+   }
+   parseJSON('{"name":"John", "age":30}'); // Valid JSON
+   parseJSON('{"name": "John", "age": 30'); // Invalid JSON
+   function loadData(url) {
+    try {
+    // Simulate loading data
+    console.log(`Loading data from ${url}`);
+    throw new Error("Network error");
+    } catch (error) {
+    console.error("An error occurred:", error.message);
+    } finally {
+    console.log("Cleanup actions completed");
+    }
+   }
+   loadData("https://api.example.com/data");
+   
+   function verifyAge(age) {
+    try {
+    if (age < 18) {
+    throw new Error("You must be 18 years or older.");
+    }
+    console.log("Age verified:", age);
+    } catch (error) {
+    console.error("Verification failed:", error.message);
+    }
+   }
+   verifyAge(21); // Passes verification
+   verifyAge(16); // Fails verification
+   
+   function processFile(data) {
+    try {
+    console.log("Processing data...");
+    try {
+    let result = JSON.parse(data);
+    console.log("Data processed:", result);
+    } catch (parseError) {
+    throw new Error("Data parsing failed.");
+    }
+    } catch (error) {
+    console.error("Error:", error.message);
+    }
+   }
+   processFile('{"valid": "json"}');
+   processFile('invalid json');
+   
+   async function fetchData(url) {
+    try {
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log("Data fetched successfully:", data);
+    } catch (error) {
+    console.error("Failed to fetch data:", error);
+    }
+   }
+   fetchData("http://127.0.0.1:5500/data.json");
+   
