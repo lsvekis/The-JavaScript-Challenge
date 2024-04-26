@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Practice</title>
+</head>
+
+<body>
+    <p class="info">Original content</p>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <p>First paragraph.</p>
+    <p>Second paragraph.</p>
+    <button id="addButton">Add Item</button>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <script>
+        let paragraph = document.querySelector('.info');
+        paragraph.textContent = "Updated content here!";
+
+        let newItem = document.createElement('li');
+        newItem.textContent = "Item 3";
+        document.getElementById('myList').appendChild(newItem);
+
+        let list = document.getElementById('myList');
+        let firstItem = list.querySelector('li'); // Selects the first li
+        list.removeChild(firstItem);
+
+        let paragraphs = document.querySelectorAll('p');
+        paragraphs.forEach(p => {
+            p.style.color = 'blue';
+            p.style.fontSize = '18px';
+        });
+        document.getElementById('addButton').addEventListener('click', function () {
+            let newItem = document.createElement('li');
+            newItem.textContent = `Item ${document.querySelectorAll('#myList li').length + 1}`;
+            newItem.onclick = function () { alert(this.textContent); };
+            document.getElementById('myList').appendChild(newItem);
+        });
+
+    </script>
+</body>
+</html>
