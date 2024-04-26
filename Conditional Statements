@@ -1,0 +1,56 @@
+let age = 20;
+if (age >= 18) {
+ console.log("You are eligible to vote.");
+} else {
+ console.log("You are not eligible to vote yet.");
+}
+
+let score = 85;
+if (score >= 90) {
+ console.log("A");
+} else if (score >= 80) {
+ console.log("B");
+} else if (score >= 70) {
+ console.log("C");
+} else if (score >= 60) {
+ console.log("D");
+} else {
+ console.log("F");
+}
+
+let weather = prompt("Enter the weather (sunny, rainy, snowy):");
+switch (weather.toLowerCase()) {
+ case "sunny":
+ console.log("Let's go for a walk!");
+ break;
+ case "rainy":
+ console.log("Bring an umbrella!");
+ break;
+ case "snowy":
+ console.log("Time to build a snowman!");
+ break;
+ default:
+ console.log("That's not a valid weather type!");
+}
+
+let number = 7;
+if (number % 2 === 0) {
+ console.log("The number is even.");
+} else {
+ console.log("The number is odd.");
+}
+
+let year = 2024;
+if (year % 4 === 0) {
+ if (year % 100 === 0) {
+ if (year % 400 === 0) {
+ console.log(`${year} is a leap year.`);
+ } else {
+ console.log(`${year} is not a leap year.`);
+ }
+ } else {
+ console.log(`${year} is a leap year.`);
+ }
+} else {
+ console.log(`${year} is not a leap year.`);
+}
