@@ -1,0 +1,27 @@
+let displayMessage1 = function() {
+    console.log("Hello, JavaScript!");
+   };
+   displayMessage1(); // Invocation of the anonymous function
+
+   let displayMessage2 = () => {
+    console.log("Hello, JavaScript!");
+   };
+   displayMessage2();
+   
+   function createCounter() {
+    let count = 0;
+    return function() {
+    count += 1;
+    console.log(count);
+    };
+   }
+   let myCounter = createCounter();
+   myCounter(); // Outputs 1
+   myCounter(); // Outputs 2
+   
+   (function() {
+    console.log("IIFE executed!");
+   })();
+   
+   let doubleNumbers = numbers => numbers.map(number => number * 2);
+console.log(doubleNumbers([1, 2, 3])); // Outputs [2, 4, 6]
