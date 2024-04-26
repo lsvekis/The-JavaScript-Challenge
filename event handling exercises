@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Practice</title>
+</head>
+
+<body>
+    <!-- HTML to create a button -->
+    <button id="myButton">Click Me</button>
+    <div id="myDiv" style="padding: 20px; border: 1px solid black;">
+        Click the box or the button!
+        <button id="myButton1">Click Me</button>
+    </div>
+    <a href="https://www.example.com" id="myLink">Go to Example.com</a>
+    <button class="clickButton">Button 1</button>
+    <button class="clickButton">Button 2</button>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        document.getElementById('myButton').addEventListener('click', function () {
+            alert('Button clicked!');
+        });
+        document.getElementById('myDiv').addEventListener('click', function () {
+            alert('Div clicked!');
+        });
+        document.getElementById('myButton1').addEventListener('click', function (event) {
+            event.stopPropagation();
+            alert('Button clicked!');
+        });
+
+        document.getElementById('myLink').addEventListener('click', function (event) {
+            event.preventDefault();
+            alert('Default action prevented!');
+        });
+
+        let buttons = document.querySelectorAll('.clickButton');
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                this.textContent = 'Clicked';
+            });
+        });
+        document.getElementById('myList').addEventListener('click', function (event) {
+            if (event.target.tagName === 'LI') {
+                alert('You clicked on ' + event.target.textContent);
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
