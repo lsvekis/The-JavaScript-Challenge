@@ -1,0 +1,27 @@
+console.log("Hello, JavaScript!");
+
+let a = 5;
+let b = 6;
+let c = a + b;
+console.log(c);
+
+let number1 = 42;
+let string = "JavaScript";
+let boolean = true;
+let nothing = null;
+let undefinedVariable;
+console.log(typeof number1); // "number"
+console.log(typeof string); // "string"
+console.log(typeof boolean); // "boolean"
+console.log(typeof nothing); // "object" (quirk in JavaScript)
+console.log(typeof undefinedVariable); // "undefined"
+
+let number = 24;
+if (number % 2 === 0) {
+ console.log("The number is even");
+}
+
+let firstName = "John";
+let lastName = "Doe";
+let fullName = firstName + " " + lastName;
+console.log(fullName);
