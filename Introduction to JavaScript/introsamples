@@ -1,0 +1,28 @@
+let message = "Hello, World!"; // Declares a variable that can be changed
+const PI = 3.14159;           // Declares a constant whose value cannot be changed
+//var age = 30;                 // Declares a variable with function scope
+
+let name = "Alice";
+let age = 25;
+let isStudent = true;
+let address = null;
+let definition;
+console.log(typeof name);         // Outputs "string"
+console.log(typeof age);          // Outputs "number"
+console.log(typeof isStudent);    // Outputs "boolean"
+console.log(typeof address);      // Outputs "object" because `null` is treated as an object
+console.log(typeof definition);   // Outputs "undefined"
+
+let score = 85;
+if (score >= 90) {
+ console.log("Excellent");
+} else if (score >= 80) {
+ console.log("Good");
+} else {
+ console.log("Needs Improvement");
+}
+
+let user = "Alice";
+let greeting = "Hello, " + user + "! Welcome to JavaScript."; // Using the + operator
+console.log(greeting);
+console.log(`Hello, ${user}! Welcome to JavaScript.`); // Using template literals
