@@ -1,0 +1,55 @@
+let helloPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Hello, Promise!");
+    }, 2000);
+});
+helloPromise.then(message => {
+    console.log(message); // Outputs "Hello, Promise!" after 2 seconds
+});
+
+let errorPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        reject(new Error("Something went wrong!"));
+    }, 1000);
+});
+errorPromise
+    .then(result => {
+        console.log(result);
+    })
+    .catch(error => {
+        console.error(error.message); // Outputs "Something went wrong!" after 1 second
+    });
+
+new Promise(resolve => resolve(1))
+    .then(result => {
+        console.log(result); // Outputs 1
+        return result * 2;
+    })
+    .then(result => {
+        console.log(result); // Outputs 2
+        return result * 2;
+    })
+    .then(result => {
+        console.log(result); // Outputs 4
+        return result * 2;
+    });
+
+let promise1 = Promise.resolve(3);
+let promise2 = 42;
+let promise3 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 100, 'foo');
+});
+Promise.all([promise1, promise2, promise3]).then(values => {
+    console.log(values); // Outputs [3, 42, "foo"]
+});
+
+let promises = [
+    Promise.resolve(10),
+    Promise.reject(new Error("Failure")),
+    Promise.resolve(30)
+];
+Promise.allSettled(promises).then(results => {
+    results.forEach((result, index) => {
+        console.log(`Promise ${index + 1}:`, result.status);
+    });
+});
